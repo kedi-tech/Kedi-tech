@@ -1,0 +1,522 @@
+{
+    "metadata": {
+        "title": "Kedi Tech - Software Development Company",
+        "description": "We build apps, websites, software, and SaaS."
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "products": "Products",
+        "contact": "Contact",
+        "login": "Login"
+    },
+    "hero": {
+        "badge": "Available for new projects",
+        "title": "We Build Digital",
+        "titleHighlight": "Future",
+        "subtitle": "Transforming ideas into powerful software solutions. We specialize in web development, mobile apps, and SaaS products.",
+        "ctaPrimary": "Start Your Project",
+        "ctaSecondary": "View Our Work",
+        "features": {
+            "cleanCode": "Clean Code",
+            "fastPerformance": "Fast Performance",
+            "scalable": "Scalable Solutions"
+        }
+    },
+    "services": {
+        "title": "Our Services",
+        "subtitle": "We offer a full spectrum of digital solutions to help your business grow and succeed in the digital age.",
+        "viewAll": "View All Services",
+        "learnMore": "Learn More",
+        "detail": {
+            "backToServices": "Back to Services",
+            "whatWeOffer": "What We Offer",
+            "whyChooseUs": "Why Choose Us?",
+            "whyChooseUsDescription": "We combine technical expertise with creative innovation to deliver exceptional results. Our team is dedicated to your success.",
+            "expertTeam": "Expert Team",
+            "provenTrackRecord": "Proven Track Record",
+            "agileMethodology": "Agile Methodology",
+            "support24_7": "24/7 Support",
+            "getStarted": "Get Started with",
+            "featureDescription": "Comprehensive solutions tailored to your specific requirements.",
+            "serviceNotFound": "Service Not Found"
+        },
+        "items": {
+            "web-dev": {
+                "title": "Web Development",
+                "description": "Custom websites and web applications built with modern technologies like Next.js, React, and Node.js.",
+                "features": ["Responsive Design", "SEO Optimization", "Performance Tuning", "CMS Integration"]
+            },
+            "mobile-app": {
+                "title": "Mobile App Development",
+                "description": "Native and cross-platform mobile apps for iOS and Android using React Native and Flutter.",
+                "features": ["iOS & Android", "Cross-Platform", "App Store Submission", "Push Notifications"]
+            },
+            "saas-dev": {
+                "title": "SaaS Development",
+                "description": "Scalable Software as a Service solutions with secure authentication, subscription management, and multi-tenancy.",
+                "features": ["Multi-tenancy", "Subscription Billing", "API Development", "Cloud Infrastructure"]
+            },
+            "ui-ux": {
+                "title": "UI/UX Design",
+                "description": "User-centric design that drives engagement and conversion. We create beautiful, intuitive interfaces.",
+                "features": ["User Research", "Wireframing", "Prototyping", "Design Systems"]
+            },
+            "api-integration": {
+                "title": "API Integration",
+                "description": "Seamless integration of third-party APIs and development of custom RESTful and GraphQL APIs.",
+                "features": ["REST & GraphQL", "Third-party Integrations", "Secure Data Transfer", "API Documentation"]
+            },
+            "ai-automation": {
+                "title": "AI Automation",
+                "description": "Leverage the power of Artificial Intelligence to automate workflows and enhance decision-making.",
+                "features": ["Chatbots", "Process Automation", "Data Analysis", "Machine Learning"]
+            }
+        }
+    },
+    "portfolio": {
+        "title": "Our Portfolio",
+        "subtitle": "A showcase of our best work. We build digital products that drive results.",
+        "viewAll": "View All Projects",
+        "viewCase": "View Case Study",
+        "detail": {
+            "backToPortfolio": "Back to Portfolio",
+            "visitLiveSite": "Visit Live Site",
+            "theChallenge": "The Challenge",
+            "theSolution": "The Solution",
+            "techStack": "Tech Stack",
+            "timeline": "Timeline",
+            "kickoff": "Kickoff",
+            "launch": "Launch",
+            "duration": "Duration",
+            "startdate": "Start Date",
+            "enddate": "End Date",
+            "January": "January",
+            "February": "February",
+            "March": "March",
+            "April": "April",
+            "May": "May",
+            "June": "June",
+            "July": "July",
+            "August": "August",
+            "September": "September",
+            "October": "October",
+            "November": "November",
+            "December": "December",
+            "Months": "Months"
+        },
+        "categories": {
+            "all": "All",
+            "webApp": "Web App",
+            "mobileApp": "Mobile App",
+            "saas": "SaaS",
+            "ecommerce": "E-commerce"
+        },
+        "items": {
+            "1": {
+                "title": "CNG-EPT",
+                "description": "Centralized platform for Guinea's educational indicators.",
+                "challenge": {
+                    "title": "The Challenge",
+                    "content": "Every initiative begins with an observation. For CNG/EPT, the main challenge is to provide Guinean citizens with reliable access to clear, up-to-date, and actionable educational data — across the entire national territory — to support decisions, policies, and advocacy. This involves gathering diverse indicators (student enrollment, budgets, girls' education, equity, etc.) from various sources, while ensuring transparency, consistency, and accessibility for all."
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "content": "To address these needs, CNG/EPT adopts a \"data & user-oriented\" approach:",
+                    "points": [
+                        "The platform serves as a centralized hub for Guinea's educational indicators — budget, attendance, equity, regional distributions, educational resources, etc.",
+                        "Thanks to clear navigation (tabs for \"Data\", \"Schools\", \"Resources\", \"Reports/Studies/Educational Materials/Educational Policies\"), users can easily explore, filter, or search for the information they need.",
+                        "The organization's structure — 27 member organizations covering the education sector — enables pooling efforts, harmonizing data, and ensuring participatory and inclusive governance.",
+                        "By combining the strength of civil society, institutional partnerships, and support from donors/international partners, CNG/EPT establishes a monitoring and evaluation system that enables budget tracking, regional analysis, transparency, and advocacy."
+                    ]
+                }
+            },
+            "2": {
+                "title": "Ibarry Marketing",
+                "description": "Digital marketing agency combining creativity, strategy, and multicultural adaptability.",
+                "challenge": {
+                    "title": "The Challenge",
+                    "content": "Every business starts with an idea — and often, a need for visibility, credibility, and growth. For iBarry Marketing, the initial challenge was to give small and medium-sized businesses, wherever they are, the means to transform themselves into a strong, credible, and memorable brand. Many businesses have a good product or service, but lack strategy, design, or visual identity to convince their customers. The goal was therefore to build an agency capable of supporting diverse companies — startups, local businesses in Africa or elsewhere, or diasporic businesses — and help them stand out in a competitive digital space, while valuing their history, culture, and ambitions."
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "content": "iBarry Marketing addresses this need by combining creativity, digital strategy, and multicultural adaptability.",
+                    "points": [
+                        "The agency offers a complete visual identity (branding, design) designed to define who you are and what you represent.",
+                        "Design of elegant, high-performing websites and mobile applications adapted to modern usage, enabling conversion of visitors into customers.",
+                        "Implementation of customized marketing strategies — based on data, culture, target audience — to maximize visibility, attract prospects, and strengthen trust.",
+                        "A personalized approach: each project is designed according to the specific needs of the business — no \"one-size-fits-all\" solution.",
+                        "A multicultural team — strategists, designers, developers from diverse backgrounds — which enables combining a global perspective with local market understanding."
+                    ]
+                }
+            },
+            "3": {
+                "title": "TLC (Teckland)",
+                "description": "Mobile carpooling and ride-matching application for flexible mobility.",
+                "challenge": {
+                    "title": "The Challenge",
+                    "content": "Every urban trip — and every move — often begins with a challenge: finding a reliable, affordable, and accessible means of transportation, especially in contexts where public transport is limited or impractical. For TLC (Teckland), the challenge is to offer a flexible mobility solution that allows individuals to move around easily, without depending on traditional transport, while optimizing available resources (cars, drivers, routes). The goal is to build a platform capable of connecting drivers and passengers in a simple and secure way, managing traffic uncertainties, availability, and constraints of distance, cost, and comfort — while remaining efficient, scalable, and accessible to as many users as possible."
+                },
+                "solution": {
+                    "title": "The Solution",
+                    "content": "TLC (Teckland) addresses this need by offering a mobile carpooling / ride-matching application, designed for simplicity, speed, and flexibility:",
+                    "points": [
+                        "The application allows a user to request a ride or offer a ride if they are driving, thus facilitating carpooling as needed.",
+                        "Intuitive mobile interface, designed for user comfort — whether passenger or driver — to search, offer, or accept a ride easily.",
+                        "Route-user matching system: the app connects passengers and drivers going in the same direction, which helps reduce costs and optimize vehicle occupancy.",
+                        "Ability to make secure payments (if applicable) — or clear cost sharing — so the service remains transparent and reliable.",
+                        "Useful features such as estimated time of arrival (ETA), route tracking, driver / passenger contact, and facilitation of logistics before/after the trip."
+                    ]
+                }
+            },
+            "4": {
+                "title": "Real Estate Portal",
+                "description": "A property listing platform with virtual tours and agent management."
+            },
+            "5": {
+                "title": "AI Content Generator",
+                "description": "An AI-powered tool for generating marketing copy and blog posts."
+            },
+            "6": {
+                "title": "Travel Booking System",
+                "description": "A complete booking engine for flights, hotels, and car rentals."
+            }
+        }
+    },
+    "products": {
+        "title": "Digital Store",
+        "subtitle": "Premium templates, UI kits, and resources to speed up your development workflow.",
+        "viewAll": "View All Products",
+        "addToCart": "Add to Cart",
+        "detail": {
+            "backToStore": "Back to Store",
+            "reviews": "reviews",
+            "askQuestion": "Ask a Question",
+            "instantDownload": "Instant Download",
+            "lifetimeUpdates": "Lifetime Updates",
+            "premiumSupport": "Premium Support",
+            "addedToCart": "Added {product} to cart!",
+            "productNotFound": "Product Not Found"
+        },
+        "categories": {
+            "template": "Template",
+            "uiKit": "UI Kit"
+        },
+        "items": {
+            "1": {
+                "name": "SaaS Starter Kit",
+                "description": "A complete Next.js SaaS starter kit with authentication, billing, and dashboard."
+            },
+            "2": {
+                "name": "E-commerce UI Kit",
+                "description": "High-quality e-commerce components built with Tailwind CSS and React."
+            },
+            "3": {
+                "name": "Admin Dashboard Template",
+                "description": "A responsive admin dashboard template with charts, tables, and dark mode."
+            },
+            "4": {
+                "name": "Mobile App UI Bundle",
+                "description": "Over 100 mobile app screens for iOS and Android."
+            }
+        }
+    },
+    "testimonials": {
+        "title": "What Our Clients Say",
+        "subtitle": "Discover why businesses trust us with their digital projects.",
+        "items": [
+            {
+                "id": "1",
+                "name": "Barry Ibrahim",
+                "role": "CEO, Ibarry Marketing",
+                "content": "Kedi Tech transformed our vision into reality. Their attention to detail and technical expertise is unmatched.",
+                "avatar": "/ibarry.jpeg"
+            },
+            {
+                "id": "2",
+                "name": "Savané Mohamed",
+                "role": "CTO, CNG-EPT",
+                "content": "The team delivered our project on time and within budget. The code quality is exceptional.",
+                "avatar": "/savene.jpeg"
+            },
+            {
+                "id": "3",
+                "name": "Moustapha Sanoh",
+                "role": "Founder, TLC",
+                "content": "Working with Kedi Tech was a pleasure. They understood our design requirements perfectly.",
+                "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop"
+            }
+        ]
+    },
+    "cta": {
+        "title": "Ready to Start Your Project?",
+        "subtitle": "Let's work together to bring your ideas to life.",
+        "button": "Get Started Now"
+    },
+    "footer": {
+        "company": "Company",
+        "services": "Services",
+        "support": "Support",
+        "description": "Building the future of software, one line of code at a time. We deliver premium digital solutions for businesses worldwide.",
+        "serviceLinks": {
+            "webDev": "Web Development",
+            "mobileApps": "Mobile Apps",
+            "saasSolutions": "SaaS Solutions",
+            "uiUxDesign": "UI/UX Design"
+        },
+        "companyLinks": {
+            "aboutUs": "About Us",
+            "portfolio": "Portfolio",
+            "careers": "Careers",
+            "contact": "Contact"
+        },
+        "legal": {
+            "privacyPolicy": "Privacy Policy",
+            "termsOfService": "Terms of Service"
+        },
+        "newsletter": {
+            "title": "Stay Updated",
+            "subtitle": "Subscribe to our newsletter for the latest updates.",
+            "placeholder": "Enter your email",
+            "button": "Subscribe"
+        },
+        "rights": "All rights reserved."
+    },
+    "contact": {
+        "title": "Get in Touch",
+        "subtitle": "Ready to start your project? Fill out the form below and we'll get back to you within 24 hours.",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "phone": "WhatsApp / Phone",
+            "projectType": "Project Type",
+            "budget": "Budget Range",
+            "message": "Message",
+            "attachments": "Attachments (Optional)",
+            "send": "Send Message",
+            "sending": "Sending..."
+        },
+        "projectTypes": {
+            "web": "Web Development",
+            "mobile": "Mobile App",
+            "saas": "SaaS Product",
+            "design": "UI/UX Design",
+            "other": "Other"
+        },
+        "budgets": {
+            "small": "$1k - $5k",
+            "medium": "$5k - $15k",
+            "large": "$15k - $50k",
+            "enterprise": "$50k+"
+        }
+    },
+    "auth": {
+        "login": {
+            "title": "Sign in",
+            "subtitle": "Enter your email and password to access your account",
+            "email": "Email",
+            "password": "Password",
+            "forgotPassword": "Forgot password?",
+            "signIn": "Sign In",
+            "signingIn": "Signing in...",
+            "orContinue": "Or continue with",
+            "noAccount": "Don't have an account?",
+            "signUp": "Sign up"
+        },
+        "signup": {
+            "title": "Create an Account",
+            "subtitle": "Enter your email below to create your account",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "createAccount": "Create Account",
+            "creating": "Creating account...",
+            "hasAccount": "Already have an account?"
+        },
+        "forgotPassword": {
+            "title": "Forgot Password",
+            "subtitle": "Enter your email address and we'll send you a link to reset your password",
+            "sendLink": "Send Reset Link",
+            "sending": "Sending link...",
+            "checkEmail": "Check your email",
+            "emailSent": "We have sent a password reset link to your email address.",
+            "backToLogin": "Back to Sign In"
+        }
+    },
+    "portal": {
+        "nav": {
+            "dashboard": "Dashboard",
+            "projects": "My Projects",
+            "messages": "Messages",
+            "files": "Files",
+            "payments": "Payments",
+            "settings": "Settings",
+            "logout": "Log Out"
+        },
+        "dashboard": {
+            "title": "Dashboard",
+            "subtitle": "Welcome back! Here's an overview of your projects.",
+            "totalSpent": "Total Spent",
+            "totalSpentDesc": "Lifetime project spend",
+            "activeProjects": "Active Projects",
+            "activeProjectsDesc": "Currently in progress",
+            "pendingInvoices": "Pending Invoices",
+            "pendingInvoicesDesc": "Requires attention",
+            "pendingInvoicesTrend": "2 overdue",
+            "completedProjects": "Completed Projects",
+            "completedProjectsDesc": "Successfully delivered",
+            "charts": {
+                "projectSpending": "Project Spending",
+                "weeklyActivity": "Weekly Activity"
+            }
+        },
+        "projects": {
+            "title": "My Projects",
+            "subtitle": "Track the progress of your ongoing and completed projects.",
+            "viewDetails": "View Details",
+            "progress": "Progress",
+            "due": "Due",
+            "status": {
+                "inProgress": "In Progress",
+                "completed": "Completed",
+                "pending": "Pending"
+            },
+            "milestones": {
+                "title": "Milestones",
+                "description": "Track the progress of key project deliverables."
+            },
+            "projectInfo": {
+                "title": "Project Info",
+                "status": "Status",
+                "dueDate": "Due Date",
+                "budget": "Budget",
+                "overallProgress": "Overall Progress"
+            },
+            "quickActions": {
+                "title": "Quick Actions",
+                "contactManager": "Contact Manager",
+                "viewFiles": "View Files"
+            }
+        },
+        "messages": {
+            "title": "Messages",
+            "subtitle": "Chat with the support team and project managers.",
+            "supportTeam": "Support Team",
+            "online": "Online",
+            "typePlaceholder": "Type your message...",
+            "justNow": "Just now"
+        },
+        "files": {
+            "title": "Files",
+            "subtitle": "Access and download project documents.",
+            "upload": "Upload File",
+            "name": "Name",
+            "type": "Type",
+            "size": "Size",
+            "date": "Date Uploaded",
+            "actions": "Actions",
+            "allFiles": "All Files",
+            "allFilesDesc": "A list of all files associated with your projects."
+        },
+        "payments": {
+            "title": "Payments & Invoices",
+            "subtitle": "View your payment history and download invoices.",
+            "totalPaid": "Total Paid",
+            "pending": "Pending",
+            "overdue": "Overdue",
+            "invoiceId": "Invoice ID",
+            "project": "Project",
+            "date": "Date",
+            "amount": "Amount",
+            "statusLabel": "Status",
+            "invoiceHistory": "Invoice History",
+            "invoiceHistoryDesc": "A list of all your invoices and their payment status.",
+            "status": {
+                "paid": "Paid",
+                "pending": "Pending",
+                "overdue": "Overdue"
+            }
+        },
+        "settings": {
+            "title": "Settings",
+            "subtitle": "Manage your account settings and preferences.",
+            "profile": "Profile Information",
+            "profileSubtitle": "Update your personal information and profile picture.",
+            "changePhoto": "Change Photo",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phone": "Phone Number",
+            "company": "Company",
+            "saveChanges": "Save Changes",
+            "saving": "Saving...",
+            "password": "Password",
+            "passwordSubtitle": "Change your password to keep your account secure.",
+            "currentPassword": "Current Password",
+            "newPassword": "New Password",
+            "confirmPassword": "Confirm New Password",
+            "updatePassword": "Update Password",
+            "notifications": "Notifications",
+            "notificationsSubtitle": "Manage how you receive notifications.",
+            "emailNotifications": "Email Notifications",
+            "emailNotificationsDesc": "Receive updates via email",
+            "projectUpdates": "Project Updates",
+            "projectUpdatesDesc": "Get notified about project milestones",
+            "configure": "Configure"
+        }
+    },
+    "about": {
+        "title": "About Kedi Tech",
+        "subtitle": "We are a team of passionate developers and designers dedicated to building the future of the web.",
+        "values": {
+            "title": "Our Core Values",
+            "subtitle": "These principles guide every decision we make and every line of code we write.",
+            "passion": {
+                "title": "Passion",
+                "description": "We love what we do and it shows in our work."
+            },
+            "integrity": {
+                "title": "Integrity",
+                "description": "We are honest, transparent, and ethical in all our dealings."
+            },
+            "innovation": {
+                "title": "Innovation",
+                "description": "We constantly push the boundaries of what's possible."
+            },
+            "collaboration": {
+                "title": "Collaboration",
+                "description": "We believe in the power of teamwork and partnership."
+            }
+        },
+        "timeline": {
+            "title": "Our Journey",
+            "subtitle": "From humble beginnings to a global agency. Here's how we got here."
+        },
+        "team": {
+            "title": "Meet Our Team",
+            "subtitle": "The talented individuals behind our success. We are a diverse team of engineers, designers, and strategists."
+        }
+    },
+    "common": {
+        "search": "Search",
+        "download": "Download",
+        "delete": "Delete",
+        "view": "View",
+        "actions": "Actions",
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success",
+        "cancel": "Cancel",
+        "save": "Save",
+        "edit": "Edit",
+        "upload": "Upload",
+        "filter": "Filter",
+        "sort": "Sort",
+        "close": "Close",
+        "back": "Back",
+        "next": "Next",
+        "previous": "Previous",
+        "submit": "Submit"
+    }
+}

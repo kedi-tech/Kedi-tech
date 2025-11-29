@@ -1,0 +1,535 @@
+{
+    "metadata": {
+        "title": "Kedi Tech - Entreprise de Développement Logiciel",
+        "description": "Nous créons des applications, sites web, logiciels et SaaS."
+    },
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "products": "Produits",
+        "contact": "Contact",
+        "login": "Connexion"
+    },
+    "hero": {
+        "badge": "Disponible pour de nouveaux projets",
+        "title": "Nous Construisons l'Avenir",
+        "titleHighlight": "Numérique",
+        "subtitle": "Transformer vos idées en solutions logicielles puissantes. Nous sommes spécialisés dans le développement web, les applications mobiles et les produits SaaS.",
+        "ctaPrimary": "Démarrer Votre Projet",
+        "ctaSecondary": "Voir Nos Réalisations",
+        "features": {
+            "cleanCode": "Code Propre",
+            "fastPerformance": "Performance Rapide",
+            "scalable": "Solutions Évolutives"
+        }
+    },
+    "services": {
+        "title": "Nos Services",
+        "subtitle": "Nous offrons un éventail complet de solutions numériques pour aider votre entreprise à croître et réussir à l'ère numérique.",
+        "viewAll": "Voir Tous les Services",
+        "learnMore": "En Savoir Plus",
+        "detail": {
+            "backToServices": "Retour aux Services",
+            "whatWeOffer": "Ce Que Nous Offrons",
+            "whyChooseUs": "Pourquoi Nous Choisir?",
+            "whyChooseUsDescription": "Nous combinons l'expertise technique avec l'innovation créative pour offrir des résultats exceptionnels. Notre équipe est dédiée à votre succès.",
+            "expertTeam": "Équipe d'Experts",
+            "provenTrackRecord": "Antécédents Prouvés",
+            "agileMethodology": "Méthodologie Agile",
+            "support24_7": "Support 24/7",
+            "getStarted": "Commencer avec",
+            "featureDescription": "Solutions complètes adaptées à vos besoins spécifiques.",
+            "serviceNotFound": "Service Non Trouvé"
+        },
+        "items": {
+            "web-dev": {
+                "title": "Développement Web",
+                "description": "Sites web et applications web personnalisés construits avec des technologies modernes comme Next.js, React et Node.js.",
+                "features": ["Design Responsive", "Optimisation SEO", "Optimisation des Performances", "Intégration CMS"]
+            },
+            "mobile-app": {
+                "title": "Développement d'Applications Mobiles",
+                "description": "Applications mobiles natives et multiplateformes pour iOS et Android utilisant React Native et Flutter.",
+                "features": ["iOS & Android", "Multiplateforme", "Soumission App Store", "Notifications Push"]
+            },
+            "saas-dev": {
+                "title": "Développement SaaS",
+                "description": "Solutions Software as a Service évolutives avec authentification sécurisée, gestion d'abonnements et multi-locataires.",
+                "features": ["Multi-locataires", "Facturation d'Abonnement", "Développement API", "Infrastructure Cloud"]
+            },
+            "ui-ux": {
+                "title": "Design UI/UX",
+                "description": "Design centré sur l'utilisateur qui stimule l'engagement et la conversion. Nous créons des interfaces belles et intuitives.",
+                "features": ["Recherche Utilisateur", "Maquettage", "Prototypage", "Systèmes de Design"]
+            },
+            "api-integration": {
+                "title": "Intégration API",
+                "description": "Intégration transparente d'API tierces et développement d'API RESTful et GraphQL personnalisées.",
+                "features": ["REST & GraphQL", "Intégrations Tierces", "Transfert de Données Sécurisé", "Documentation API"]
+            },
+            "ai-automation": {
+                "title": "Automatisation IA",
+                "description": "Exploitez la puissance de l'Intelligence Artificielle pour automatiser les flux de travail et améliorer la prise de décision.",
+                "features": ["Chatbots", "Automatisation des Processus", "Analyse de Données", "Apprentissage Automatique"]
+            }
+        }
+    },
+    "portfolio": {
+        "title": "Notre Portfolio",
+        "subtitle": "Une vitrine de nos meilleurs travaux. Nous créons des produits numériques qui génèrent des résultats.",
+        "viewAll": "Voir Tous les Projets",
+        "viewCase": "Voir l'Étude de Cas",
+        "detail": {
+            "backToPortfolio": "Retour au Portfolio",
+            "visitLiveSite": "Visiter le Site",
+            "theChallenge": "Le défi",
+            "theSolution": "La solution",
+            "techStack": "Stack Technique",
+            "timeline": "Calendrier",
+            "kickoff": "Démarrage",
+            "launch": "Lancement",
+            "duration": "Durée",
+            "startdate": "Date de Démarrage",
+            "enddate": "Date de Fin",
+            "January": "Janvier",
+            "February": "Février",
+            "March": "Mars",
+            "April": "Avril",
+            "May": "Mai",
+            "June": "Juin",
+            "July": "Juillet",
+            "August": "Août",
+            "September": "Septembre",
+            "October": "Octobre",
+            "November": "Novembre",
+            "December": "Décembre",
+            "Months": "Mois",
+            "1 month": "1 mois",
+            "2 months": "2 mois",
+            "3 months": "3 mois",
+            "4 months": "4 mois",
+            "5 months": "5 mois",
+            "6 months": "6 mois",
+            "7 months": "7 mois",
+            "8 months": "8 mois",
+            "9 months": "9 mois",
+            "10 months": "10 mois",
+            "11 months": "11 mois",
+            "12 months": "12 mois"
+        
+        },
+        "categories": {
+            "all": "Tous",
+            "webApp": "Application Web",
+            "mobileApp": "Application Mobile",
+            "saas": "SaaS",
+            "ecommerce": "E-commerce"
+        },
+        "items": {
+            "1": {
+                "title": "CNG-EPT",
+                "description": "Plateforme centralisée pour les indicateurs éducatifs de la Guinée.",
+                "challenge": {
+                    "title": "Le défi",
+                    "content": "Chaque initiative débute avec un constat. Pour CNG/EPT, le défi principal est de fournir aux citoyens guinéens un accès fiable à des données éducatives claires, actualisées et exploitables — sur tout le territoire national — afin de soutenir des décisions, des politiques et des plaidoyers. Il s'agit de rassembler des indicateurs variés (effectifs d'élèves, budgets, scolarisation des filles, équité, etc.) venant de sources diverses, tout en assurant transparence, cohérence et accessibilité pour tous."
+                },
+                "solution": {
+                    "title": "La solution",
+                    "content": "Pour répondre à ces besoins, CNG/EPT adopte une approche orientée \"données & utilisateurs\" :",
+                    "points": [
+                        "La plateforme sert de hub centralisé pour les indicateurs éducatifs de la Guinée — budget, fréquentation, équité, répartitions régionales, ressources pédagogiques, etc.",
+                        "Grâce à une navigation claire (onglets « Données », « Écoles », « Ressources », « Rapports/Études/Matériels pédagogiques/Politiques éducatives »), l'utilisateur peut facilement explorer, filtrer ou rechercher l'information qui l'intéresse.",
+                        "La structure de l'organisation — 27 organisations membres couvrant le domaine de l'éducation — permet de regrouper les efforts, d'harmoniser les données, et d'assurer une gouvernance participative et inclusive.",
+                        "En combinant la force de la société civile, les partenariats institutionnels et le soutien des bailleurs/partenaires internationaux, CNG/EPT met en place un système de suivi et d'évaluation qui rend possible le suivi budgétaire, l'analyse régionale, la transparence et le plaidoyer."
+                    ]
+                }
+            },
+            "2": {
+                "title": "Ibarry Marketing",
+                "description": "Agence de marketing digital combinant créativité, stratégie et adaptabilité multiculturelle.",
+                "challenge": {
+                    "title": "Le défi",
+                    "content": "Chaque entreprise commence avec une idée — et souvent, un besoin de visibilité, de crédibilité et de croissance. Pour iBarry Marketing, le défi initial était de donner aux petites et moyennes entreprises, où qu'elles soient, les moyens de se transformer en marque forte, crédible et mémorable. Beaucoup d'entreprises ont un bon produit ou service, mais manquent de stratégie, de design ou d'identité visuelle pour convaincre leurs clients. L'objectif était donc de bâtir une agence capable d'accompagner des sociétés variées — startups, entreprises locales en Afrique ou ailleurs, ou entreprises diasporiques — et de les aider à se démarquer dans un espace numérique compétitif, tout en valorisant leur histoire, leur culture et leurs ambitions."
+                },
+                "solution": {
+                    "title": "La solution",
+                    "content": "iBarry Marketing répond à ce besoin en combinant créativité, stratégie digitale et adaptabilité multiculturelle.",
+                    "points": [
+                        "L'agence propose une identité visuelle complète (branding, design) destinée à définir qui vous êtes et ce que vous représentez.",
+                        "Conception de sites web et applications mobiles élégantes, performantes et adaptées aux usages modernes, permettant de convertir les visiteurs en clients.",
+                        "Mise en place de stratégies marketing sur mesure — fondées sur les données, la culture, le public ciblé — pour maximiser la visibilité, attirer des prospects et renforcer la confiance.",
+                        "Une approche personnalisée : chaque projet est conçu selon les besoins spécifiques de l'entreprise — pas de solution \"taille unique\".",
+                        "Une équipe multiculturelle — des stratèges, designers, développeurs venant d'horizons variés — ce qui permet de combiner une perspective globale et une compréhension locale des marchés."
+                    ]
+                }
+            },
+            "3": {
+                "title": "TLC (Teckland)",
+                "description": "Application mobile de co-voiturage et mise en relation de trajets pour une mobilité flexible.",
+                "challenge": {
+                    "title": "Le défi",
+                    "content": "Chaque trajet urbain — et chaque déménagement — commence souvent avec un défi : trouver un moyen de déplacement fiable, abordable et accessible, surtout dans des contextes où les transports publics sont limités ou peu pratiques. Pour TLC (Teckland), le défi consiste à offrir une solution de mobilité flexible permettant à des particuliers de se déplacer facilement, sans dépendre des transports traditionnels, tout en optimisant les ressources disponibles (voitures, conducteurs, trajets). L'objectif est de bâtir une plateforme capable de mettre en relation conducteurs et passagers de façon simple et sécurisée, en gérant les aléas du trafic, les disponibilités, et les contraintes de distance, de coût, et de confort — tout en restant efficace, scalable, et accessible pour un maximum d'utilisateurs."
+                },
+                "solution": {
+                    "title": "La solution",
+                    "content": "TLC (Teckland) répond à ce besoin en proposant une application mobile de co-voiturage / mise en relation de trajets, pensée pour la simplicité, la rapidité et la flexibilité :",
+                    "points": [
+                        "L'application permet à un utilisateur de demander un trajet ou de proposer un trajet s'il conduit, facilitant ainsi le co-voiturage selon le besoin.",
+                        "Interface mobile intuitive, pensée pour le confort de l'utilisateur — que ce soit le passager ou le conducteur — pour rechercher, proposer ou accepter un trajet facilement.",
+                        "Système de matching trajet-utilisateur : l'app met en relation des passagers et des conducteurs allant dans la même direction, ce qui permet de réduire les coûts et d'optimiser le remplissage des véhicules.",
+                        "Possibilité d'effectuer des paiements sécurisés (si applicable) — ou une répartition claire des coûts — pour que le service reste transparent et fiable.",
+                        "Fonctionnalités utiles comme estimation du temps d'arrivée (ETA), suivi du trajet, contact conducteur / passager, et facilitation de la logistique avant/après le trajet."
+                    ]
+                }
+            },
+            "4": {
+                "title": "Portail Immobilier",
+                "description": "Une plateforme de listes de propriétés avec visites virtuelles et gestion d'agents."
+            },
+            "5": {
+                "title": "Générateur de Contenu IA",
+                "description": "Un outil alimenté par l'IA pour générer des textes marketing et des articles de blog."
+            },
+            "6": {
+                "title": "Système de Réservation de Voyages",
+                "description": "Un moteur de réservation complet pour les vols, hôtels et locations de voitures."
+            }
+        }
+    },
+    "products": {
+        "title": "Boutique Numérique",
+        "subtitle": "Modèles premium, kits UI et ressources pour accélérer votre flux de développement.",
+        "viewAll": "Voir Tous les Produits",
+        "addToCart": "Ajouter au Panier",
+        "detail": {
+            "backToStore": "Retour à la Boutique",
+            "reviews": "avis",
+            "askQuestion": "Poser une Question",
+            "instantDownload": "Téléchargement Instantané",
+            "lifetimeUpdates": "Mises à Jour à Vie",
+            "premiumSupport": "Support Premium",
+            "addedToCart": "{product} a été ajouté au panier !",
+            "productNotFound": "Produit Non Trouvé"
+        },
+        "categories": {
+            "template": "Modèle",
+            "uiKit": "Kit UI"
+        },
+        "items": {
+            "1": {
+                "name": "Kit de Démarrage SaaS",
+                "description": "Un kit de démarrage SaaS Next.js complet avec authentification, facturation et tableau de bord."
+            },
+            "2": {
+                "name": "Kit UI E-commerce",
+                "description": "Composants e-commerce de haute qualité construits avec Tailwind CSS et React."
+            },
+            "3": {
+                "name": "Modèle de Tableau de Bord Admin",
+                "description": "Un modèle de tableau de bord admin responsive avec graphiques, tableaux et mode sombre."
+            },
+            "4": {
+                "name": "Pack UI Application Mobile",
+                "description": "Plus de 100 écrans d'application mobile pour iOS et Android."
+            }
+        }
+    },
+    "testimonials": {
+        "title": "Ce Que Disent Nos Clients",
+        "subtitle": "Découvrez pourquoi les entreprises nous font confiance pour leurs projets numériques.",
+        "items": [
+            {
+                "id": "1",
+                "name": "Barry Ibrahim",
+                "role": "PDG, Ibarry Marketing",
+                "content": "Kedi Tech a transformé notre vision en réalité. Leur attention aux détails et leur expertise technique sont inégalées.",
+                "avatar": "/ibarry.jpeg"
+            },
+            {
+                "id": "2",
+                "name": "Savané Mohamed",
+                "role": "CTO, CNG-EPT",
+                "content": "L'équipe a livré notre projet à temps et dans le budget. La qualité du code est exceptionnelle.",
+                "avatar": "/savane.jpeg"
+            },
+            {
+                "id": "3",
+                "name": "Moustapha Sanoh",
+                "role": "Fondateur, TLC",
+                "content": "Travailler avec Kedi Tech a été un plaisir. Ils ont parfaitement compris nos exigences de conception.",
+                "avatar": "/moustapha.jpeg"
+            }
+        ]
+    },
+    "cta": {
+        "title": "Prêt à Démarrer Votre Projet?",
+        "subtitle": "Travaillons ensemble pour donner vie à vos idées.",
+        "button": "Commencer Maintenant"
+    },
+    "footer": {
+        "company": "Entreprise",
+        "services": "Services",
+        "support": "Support",
+        "description": "Construire l'avenir du logiciel, une ligne de code à la fois. Nous offrons des solutions numériques premium pour les entreprises du monde entier.",
+        "serviceLinks": {
+            "webDev": "Développement Web",
+            "mobileApps": "Applications Mobiles",
+            "saasSolutions": "Solutions SaaS",
+            "uiUxDesign": "Design UI/UX"
+        },
+        "companyLinks": {
+            "aboutUs": "À Propos",
+            "portfolio": "Portfolio",
+            "careers": "Carrières",
+            "contact": "Contact"
+        },
+        "legal": {
+            "privacyPolicy": "Politique de Confidentialité",
+            "termsOfService": "Conditions d'Utilisation"
+        },
+        "newsletter": {
+            "title": "Restez Informé",
+            "subtitle": "Abonnez-vous à notre newsletter pour les dernières mises à jour.",
+            "placeholder": "Entrez votre email",
+            "button": "S'abonner"
+        },
+        "rights": "Tous droits réservés."
+    },
+    "contact": {
+        "title": "Contactez-Nous",
+        "subtitle": "Prêt à démarrer votre projet? Remplissez le formulaire ci-dessous et nous vous répondrons dans les 24 heures.",
+        "form": {
+            "name": "Nom",
+            "email": "Email",
+            "phone": "WhatsApp / Téléphone",
+            "projectType": "Type de Projet",
+            "budget": "Fourchette Budgétaire",
+            "message": "Message",
+            "attachments": "Pièces Jointes (Optionnel)",
+            "send": "Envoyer le Message",
+            "sending": "Envoi en cours..."
+        },
+        "projectTypes": {
+            "web": "Développement Web",
+            "mobile": "Application Mobile",
+            "saas": "Produit SaaS",
+            "design": "Design UI/UX",
+            "other": "Autre"
+        },
+        "budgets": {
+            "small": "1k$ - 5k$",
+            "medium": "5k$ - 15k$",
+            "large": "15k$ - 50k$",
+            "enterprise": "50k$+"
+        }
+    },
+    "auth": {
+        "login": {
+            "title": "Se Connecter",
+            "subtitle": "Entrez votre email et mot de passe pour accéder à votre compte",
+            "email": "Email",
+            "password": "Mot de passe",
+            "forgotPassword": "Mot de passe oublié?",
+            "signIn": "Se Connecter",
+            "signingIn": "Connexion en cours...",
+            "orContinue": "Ou continuer avec",
+            "noAccount": "Vous n'avez pas de compte?",
+            "signUp": "S'inscrire"
+        },
+        "signup": {
+            "title": "Créer un Compte",
+            "subtitle": "Entrez votre email ci-dessous pour créer votre compte",
+            "firstName": "Prénom",
+            "lastName": "Nom",
+            "createAccount": "Créer un Compte",
+            "creating": "Création en cours...",
+            "hasAccount": "Vous avez déjà un compte?"
+        },
+        "forgotPassword": {
+            "title": "Mot de Passe Oublié",
+            "subtitle": "Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe",
+            "sendLink": "Envoyer le Lien",
+            "sending": "Envoi en cours...",
+            "checkEmail": "Vérifiez votre email",
+            "emailSent": "Nous avons envoyé un lien de réinitialisation à votre adresse email.",
+            "backToLogin": "Retour à la Connexion"
+        }
+    },
+    "portal": {
+        "nav": {
+            "dashboard": "Tableau de Bord",
+            "projects": "Mes Projets",
+            "messages": "Messages",
+            "files": "Fichiers",
+            "payments": "Paiements",
+            "settings": "Paramètres",
+            "logout": "Déconnexion"
+        },
+        "dashboard": {
+            "title": "Tableau de Bord",
+            "subtitle": "Bienvenue! Voici un aperçu de vos projets.",
+            "totalSpent": "Total Dépensé",
+            "totalSpentDesc": "Dépenses totales du projet",
+            "activeProjects": "Projets Actifs",
+            "activeProjectsDesc": "Actuellement en cours",
+            "pendingInvoices": "Factures en Attente",
+            "pendingInvoicesDesc": "Nécessite une attention",
+            "pendingInvoicesTrend": "2 en retard",
+            "completedProjects": "Projets Terminés",
+            "completedProjectsDesc": "Livré avec succès",
+            "charts": {
+                "projectSpending": "Dépenses du Projet",
+                "weeklyActivity": "Activité Hebdomadaire"
+            }
+        },
+        "projects": {
+            "title": "Mes Projets",
+            "subtitle": "Suivez la progression de vos projets en cours et terminés.",
+            "viewDetails": "Voir les Détails",
+            "progress": "Progression",
+            "due": "Échéance",
+            "status": {
+                "inProgress": "En Cours",
+                "completed": "Terminé",
+                "pending": "En Attente"
+            },
+            "milestones": {
+                "title": "Jalons",
+                "description": "Suivez la progression des livrables clés du projet."
+            },
+            "projectInfo": {
+                "title": "Informations du Projet",
+                "status": "Statut",
+                "dueDate": "Date d'Échéance",
+                "budget": "Budget",
+                "overallProgress": "Progression Globale"
+            },
+            "quickActions": {
+                "title": "Actions Rapides",
+                "contactManager": "Contacter le Gestionnaire",
+                "viewFiles": "Voir les Fichiers"
+            }
+        },
+        "messages": {
+            "title": "Messages",
+            "subtitle": "Discutez avec l'équipe de support et les chefs de projet.",
+            "supportTeam": "Équipe de Support",
+            "online": "En ligne",
+            "typePlaceholder": "Tapez votre message...",
+            "justNow": "À l'instant"
+        },
+        "files": {
+            "title": "Fichiers",
+            "subtitle": "Accédez et téléchargez les documents du projet.",
+            "upload": "Téléverser un Fichier",
+            "name": "Nom",
+            "type": "Type",
+            "size": "Taille",
+            "date": "Date de Téléversement",
+            "actions": "Actions",
+            "allFiles": "Tous les Fichiers",
+            "allFilesDesc": "Une liste de tous les fichiers associés à vos projets."
+        },
+        "payments": {
+            "title": "Paiements & Factures",
+            "subtitle": "Consultez votre historique de paiements et téléchargez les factures.",
+            "totalPaid": "Total Payé",
+            "pending": "En Attente",
+            "overdue": "En Retard",
+            "invoiceId": "N° Facture",
+            "project": "Projet",
+            "date": "Date",
+            "amount": "Montant",
+            "statusLabel": "Statut",
+            "invoiceHistory": "Historique des Factures",
+            "invoiceHistoryDesc": "Une liste de toutes vos factures et leur statut de paiement.",
+            "status": {
+                "paid": "Payé",
+                "pending": "En Attente",
+                "overdue": "En Retard"
+            }
+        },
+        "settings": {
+            "title": "Paramètres",
+            "subtitle": "Gérez les paramètres et préférences de votre compte.",
+            "profile": "Informations du Profil",
+            "profileSubtitle": "Mettez à jour vos informations personnelles et photo de profil.",
+            "changePhoto": "Changer la Photo",
+            "firstName": "Prénom",
+            "lastName": "Nom",
+            "email": "Email",
+            "phone": "Numéro de Téléphone",
+            "company": "Entreprise",
+            "saveChanges": "Enregistrer les Modifications",
+            "saving": "Enregistrement...",
+            "password": "Mot de Passe",
+            "passwordSubtitle": "Changez votre mot de passe pour sécuriser votre compte.",
+            "currentPassword": "Mot de Passe Actuel",
+            "newPassword": "Nouveau Mot de Passe",
+            "confirmPassword": "Confirmer le Nouveau Mot de Passe",
+            "updatePassword": "Mettre à Jour le Mot de Passe",
+            "notifications": "Notifications",
+            "notificationsSubtitle": "Gérez comment vous recevez les notifications.",
+            "emailNotifications": "Notifications par Email",
+            "emailNotificationsDesc": "Recevoir les mises à jour par email",
+            "projectUpdates": "Mises à Jour de Projet",
+            "projectUpdatesDesc": "Être notifié des jalons du projet",
+            "configure": "Configurer"
+        }
+    },
+    "about": {
+        "title": "À Propos de Kedi Tech",
+        "subtitle": "Nous sommes une équipe de développeurs et designers passionnés dédiés à construire l'avenir du web.",
+        "values": {
+            "title": "Nos Valeurs Fondamentales",
+            "subtitle": "Ces principes guident chaque décision que nous prenons et chaque ligne de code que nous écrivons.",
+            "passion": {
+                "title": "Passion",
+                "description": "Nous aimons ce que nous faisons et cela se voit dans notre travail."
+            },
+            "integrity": {
+                "title": "Intégrité",
+                "description": "Nous sommes honnêtes, transparents et éthiques dans toutes nos relations."
+            },
+            "innovation": {
+                "title": "Innovation",
+                "description": "Nous repoussons constamment les limites du possible."
+            },
+            "collaboration": {
+                "title": "Collaboration",
+                "description": "Nous croyons au pouvoir du travail d'équipe et du partenariat."
+            }
+        },
+        "timeline": {
+            "title": "Notre Parcours",
+            "subtitle": "Des débuts modestes à une agence mondiale. Voici comment nous sommes arrivés ici."
+        },
+        "team": {
+            "title": "Rencontrez Notre Équipe",
+            "subtitle": "Les personnes talentueuses derrière notre succès. Nous sommes une équipe diversifiée d'ingénieurs, designers et stratèges."
+        }
+    },
+    "common": {
+        "search": "Rechercher",
+        "download": "Télécharger",
+        "delete": "Supprimer",
+        "view": "Voir",
+        "actions": "Actions",
+        "loading": "Chargement...",
+        "error": "Erreur",
+        "success": "Succès",
+        "cancel": "Annuler",
+        "save": "Enregistrer",
+        "edit": "Modifier",
+        "upload": "Téléverser",
+        "filter": "Filtrer",
+        "sort": "Trier",
+        "close": "Fermer",
+        "back": "Retour",
+        "next": "Suivant",
+        "previous": "Précédent",
+        "submit": "Soumettre"
+    }
+}
