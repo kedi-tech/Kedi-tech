@@ -13,8 +13,10 @@ env:
   # GHCR requires lowercase names; github.repository is "kedi-tech/Kedi-tech".
   IMAGE: ghcr.io/kedi-tech/kedi-tech
   CONTAINER: kedi-tech-website
-  # Port the reverse proxy for kedi-tech.com forwards to on the server.
-  HOST_PORT: "3001"
+  # Coolify's Traefik (container "coolify-proxy") routes the domain to the
+  # container over this Docker network; no host port is published.
+  PROXY_NETWORK: coolify
+  DOMAIN: kedi-tech.com
   SITE_URL: https://kedi-tech.com
 
 jobs:
@@ -106,7 +108,8 @@ jobs:
         env:
           IMAGE: ${{ env.IMAGE }}:${{ github.sha }}
           CONTAINER: ${{ env.CONTAINER }}
-          HOST_PORT: ${{ env.HOST_PORT }}
+          PROXY_NETWORK: ${{ env.PROXY_NETWORK }}
+          DOMAIN: ${{ env.DOMAIN }}
           REGISTRY_USER: ${{ github.actor }}
           REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
@@ -114,7 +117,7 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key_path: ${{ runner.temp }}/deploy_key
-          envs: IMAGE,CONTAINER,HOST_PORT,REGISTRY_USER,REGISTRY_TOKEN,WEBHOOK_URL
+          envs: IMAGE,CONTAINER,PROXY_NETWORK,DOMAIN,REGISTRY_USER,REGISTRY_TOKEN,WEBHOOK_URL
           script_stop: true
           script: |
             set -eu
@@ -131,32 +134,54 @@ jobs:
             docker pull "$IMAGE"
             docker logout ghcr.io
 
+            docker network inspect "$PROXY_NETWORK" >/dev/null 2>&1 \
+              || { echo "Docker network $PROXY_NETWORK not found: is Coolify's proxy running?"; exit 1; }
+
+            # Router names are unique to this site. The high priority makes this
+            # router win over any older kedi-tech.com route left in Coolify.
             docker rm -f "$CONTAINER" 2>/dev/null || true
-            # Bound to 127.0.0.1: only the reverse proxy serving kedi-tech.com reaches it.
             docker run -d \
               --name "$CONTAINER" \
               --restart unless-stopped \
-              -p "127.0.0.1:$HOST_PORT:3000" \
+              --network "$PROXY_NETWORK" \
               --env-file "$APP_DIR/.env" \
+              --label "traefik.enable=true" \
+              --label "traefik.docker.network=$PROXY_NETWORK" \
+              --label "traefik.http.services.kedi-tech.loadbalancer.server.port=3000" \
+              --label "traefik.http.routers.kedi-tech.rule=Host(\`$DOMAIN\`) || Host(\`www.$DOMAIN\`)" \
+              --label "traefik.http.routers.kedi-tech.entrypoints=https" \
+              --label "traefik.http.routers.kedi-tech.tls=true" \
+              --label "traefik.http.routers.kedi-tech.tls.certresolver=letsencrypt" \
+              --label "traefik.http.routers.kedi-tech.priority=1000" \
+              --label "traefik.http.routers.kedi-tech.service=kedi-tech" \
+              --label "traefik.http.middlewares.kedi-tech-https.redirectscheme.scheme=https" \
+              --label "traefik.http.routers.kedi-tech-http.rule=Host(\`$DOMAIN\`) || Host(\`www.$DOMAIN\`)" \
+              --label "traefik.http.routers.kedi-tech-http.entrypoints=http" \
+              --label "traefik.http.routers.kedi-tech-http.priority=1000" \
+              --label "traefik.http.routers.kedi-tech-http.middlewares=kedi-tech-https" \
+              --label "traefik.http.routers.kedi-tech-http.service=kedi-tech" \
               "$IMAGE"
 
-            # Fail the job if the site does not answer within a minute.
+            # Fail the job if the site does not answer through Traefik within a minute.
+            # Goes through the proxy on this server, so it tests the route and TLS too.
             # "/" redirects to "/fr", so check the French home page directly.
             for i in $(seq 1 30); do
-              code=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:$HOST_PORT/fr" || true)
+              code=$(curl -sk -o /dev/null -w '%{http_code}' --resolve "$DOMAIN:443:127.0.0.1" "https://$DOMAIN/fr" || true)
               if [ "$code" = "200" ]; then
-                echo "Website is up (HTTP 200)."
+                echo "Website is up through Traefik (HTTP 200)."
                 docker image prune -f >/dev/null
                 exit 0
               fi
               sleep 2
             done
-            echo "Website did not answer on port $HOST_PORT:"
+            echo "Traefik answered HTTP $code for $DOMAIN. Container logs:"
             docker logs --tail 80 "$CONTAINER"
+            echo "Proxy logs mentioning kedi-tech:"
+            docker logs --since 5m coolify-proxy 2>&1 | grep -i kedi-tech | tail -20 || true
             exit 1
 
-      # The container answering locally does not prove the domain works:
-      # this catches a broken reverse proxy, DNS or TLS certificate.
+      # Working on the server does not prove the domain works from outside:
+      # this catches DNS or firewall problems.
       - name: Check kedi-tech.com from the internet
         run: |
           for i in $(seq 1 10); do
@@ -167,5 +192,5 @@ jobs:
             fi
             sleep 3
           done
-          echo "::error::$SITE_URL answered HTTP $code. The container is running on 127.0.0.1:$HOST_PORT; check the reverse proxy (nginx/Caddy), DNS and TLS for kedi-tech.com."
+          echo "::error::$SITE_URL answered HTTP $code from the internet, but the site works through Traefik on the server. Check DNS for $DOMAIN and the server firewall (ports 80/443)."
           exit 1
