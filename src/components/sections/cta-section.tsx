@@ -4,11 +4,11 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { type Locale } from "@/i18n/config";
+import { type Locale, type Dictionary } from "@/i18n/config";
 
 interface CTASectionProps {
     locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
 export function CTASection({ locale, dict }: CTASectionProps) {

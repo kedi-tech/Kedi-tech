@@ -4,14 +4,13 @@ import Image from "next/image";
 import { team } from "@/data/team";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { type Locale } from "@/i18n/config";
+import { type Dictionary } from "@/i18n/config";
 
 interface TeamSectionProps {
-    locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
-export function TeamSection({ locale, dict }: TeamSectionProps) {
+export function TeamSection({ dict }: TeamSectionProps) {
     const t = dict.about.team;
 
     return (

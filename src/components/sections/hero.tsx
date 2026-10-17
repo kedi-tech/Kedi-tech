@@ -5,11 +5,11 @@ import Link from "next/link";
 import { Code, Rocket, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatedButton } from "@/components/ui/animated-button";
-import { type Locale } from "@/i18n/config";
+import { type Locale, type Dictionary } from "@/i18n/config";
 
 interface HeroProps {
     locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
 export function Hero({ locale, dict }: HeroProps) {

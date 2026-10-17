@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Send, MessageSquare, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { type Locale } from "@/i18n/config";
+import { useDictionary } from "@/components/providers/dictionary-provider";
 
 interface Message {
     id: string;
@@ -85,16 +86,10 @@ const initialConversations: Conversation[] = [
 export default function PortalMessagesPage() {
     const params = useParams();
     const locale = (params.locale as Locale) || "fr";
-    const [dict, setDict] = useState<any>(null);
+    const dict = useDictionary();
     const [conversations, setConversations] = useState<Conversation[]>(initialConversations);
     const [activeConversationId, setActiveConversationId] = useState<string>("ibrahim");
     const [newMessage, setNewMessage] = useState("");
-
-    useEffect(() => {
-        import(`@/i18n/dictionaries/${locale}.json`).then((module) => {
-            setDict(module.default);
-        });
-    }, [locale]);
 
     const activeConversation = conversations.find((c) => c.id === activeConversationId) || conversations[0];
 
@@ -120,8 +115,6 @@ export default function PortalMessagesPage() {
         );
         setNewMessage("");
     };
-
-    if (!dict) return <div>Loading...</div>;
     const t = dict.portal.messages;
 
     return (

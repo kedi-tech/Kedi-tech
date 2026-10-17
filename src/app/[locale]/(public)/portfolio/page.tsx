@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -10,39 +10,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { type Locale } from "@/i18n/config";
+import { useDictionary } from "@/components/providers/dictionary-provider";
 
 export default function PortfolioPage() {
     const params = useParams();
     const locale = (params.locale as Locale) || "fr";
-    const [dict, setDict] = useState<any>(null);
+    const dict = useDictionary();
     const [activeCategory, setActiveCategory] = useState("all");
-
-    useEffect(() => {
-        const loadDictionary = async () => {
-            try {
-                if (locale === 'fr') {
-                    const module = await import('@/i18n/dictionaries/fr.json');
-                    setDict(module.default);
-                } else if (locale === 'en') {
-                    const module = await import('@/i18n/dictionaries/en.json');
-                    setDict(module.default);
-                } else {
-                    // Fallback to French
-                    const module = await import('@/i18n/dictionaries/fr.json');
-                    setDict(module.default);
-                }
-            } catch (error) {
-                console.error('Error loading dictionary:', error);
-                // Fallback to French
-                import('@/i18n/dictionaries/fr.json').then((module) => {
-                    setDict(module.default);
-                });
-            }
-        };
-        loadDictionary();
-    }, [locale]);
-
-    if (!dict) return <div>Loading...</div>;
 
     const t = dict.portfolio;
     const categories = [

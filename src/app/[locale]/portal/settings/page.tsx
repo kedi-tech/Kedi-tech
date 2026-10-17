@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,18 +10,13 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Loader2 } from "lucide-react";
 import { type Locale } from "@/i18n/config";
+import { useDictionary } from "@/components/providers/dictionary-provider";
 
 export default function PortalSettingsPage() {
     const params = useParams();
     const locale = (params.locale as Locale) || "fr";
-    const [dict, setDict] = useState<any>(null);
+    const dict = useDictionary();
     const [isLoading, setIsLoading] = useState(false);
-
-    useEffect(() => {
-        import(`@/i18n/dictionaries/${locale}.json`).then((module) => {
-            setDict(module.default);
-        });
-    }, [locale]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -31,8 +26,6 @@ export default function PortalSettingsPage() {
             alert(locale === "fr" ? "Paramètres enregistrés avec succès!" : "Settings saved successfully!");
         }, 1000);
     };
-
-    if (!dict) return <div>Loading...</div>;
     const t = dict.portal.settings;
 
     return (

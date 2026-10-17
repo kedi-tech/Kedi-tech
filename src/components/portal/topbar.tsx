@@ -8,11 +8,11 @@ import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { PortalSidebar } from "./sidebar";
-import { type Locale } from "@/i18n/config";
+import { type Locale, type Dictionary } from "@/i18n/config";
 
 interface PortalTopbarProps {
     locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
 export function PortalTopbar({ locale, dict }: PortalTopbarProps) {

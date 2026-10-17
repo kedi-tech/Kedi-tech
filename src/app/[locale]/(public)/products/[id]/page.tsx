@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound, useParams } from "next/navigation";
@@ -11,26 +10,19 @@ import { Badge } from "@/components/ui/badge";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { useCart } from "@/components/providers/cart-provider";
 import { type Locale } from "@/i18n/config";
+import { useDictionary } from "@/components/providers/dictionary-provider";
 
 export default function ProductDetailPage() {
     const params = useParams();
     const locale = (params.locale as Locale) || "fr";
     const id = params.id as string;
-    const [dict, setDict] = useState<any>(null);
+    const dict = useDictionary();
     const product = products.find((p) => p.id === id);
     const { addItem } = useCart();
-
-    useEffect(() => {
-        import(`@/i18n/dictionaries/${locale}.json`).then((module) => {
-            setDict(module.default);
-        });
-    }, [locale]);
 
     if (!product) {
         notFound();
     }
-
-    if (!dict) return <div>Loading...</div>;
 
     const productT = dict.products.items[id as keyof typeof dict.products.items];
     const t = dict.products.detail;

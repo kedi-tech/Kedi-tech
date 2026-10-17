@@ -5,12 +5,12 @@ import Link from "next/link";
 import { AppLogo } from "@/components/ui/app-logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Twitter, Linkedin, Github, Instagram, Facebook } from "lucide-react";
-import { type Locale } from "@/i18n/config";
+import { Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
+import { type Locale, type Dictionary } from "@/i18n/config";
 
 interface FooterProps {
     locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
 export function Footer({ locale, dict }: FooterProps) {
@@ -34,7 +34,10 @@ export function Footer({ locale, dict }: FooterProps) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email: newsletterEmail }),
+                body: JSON.stringify({
+                    email: newsletterEmail,
+                    website: new FormData(e.currentTarget as HTMLFormElement).get("website"),
+                }),
             });
 
             const data = await response.json();
@@ -127,6 +130,7 @@ export function Footer({ locale, dict }: FooterProps) {
                             {t.newsletter.subtitle}
                         </p>
                         <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                            <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                             <Input 
                                 type="email"
                                 placeholder={t.newsletter.placeholder} 

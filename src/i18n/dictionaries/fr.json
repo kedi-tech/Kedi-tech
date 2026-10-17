@@ -336,7 +336,8 @@
             "signingIn": "Connexion en cours...",
             "orContinue": "Ou continuer avec",
             "noAccount": "Vous n'avez pas de compte?",
-            "signUp": "S'inscrire"
+            "signUp": "S'inscrire",
+            "portalComingSoon": "L'espace client arrive bientôt. En attendant, contactez-nous pour suivre l'avancement de votre projet."
         },
         "signup": {
             "title": "Créer un Compte",

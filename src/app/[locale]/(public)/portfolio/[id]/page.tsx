@@ -6,10 +6,11 @@ import { portfolio } from "@/data/portfolio";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { getDictionary, type Locale } from "@/i18n/config";
+import { getDictionary, toLocale } from "@/i18n/config";
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: Locale }> }) {
-    const { id, locale } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }) {
+    const { id, locale: rawLocale } = await params;
+    const locale = toLocale(rawLocale);
     const dict = await getDictionary(locale);
     const project = portfolio.find((p) => p.id === id);
 
@@ -19,7 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
         };
     }
 
-    const projectT = dict.portfolio.items[id as keyof typeof dict.portfolio.items];
+    // Not every project has challenge/solution copy, so widen to the optional shape
+    const projectT = dict.portfolio.items[id as keyof typeof dict.portfolio.items] as PortfolioItemCopy | undefined;
     const title = projectT?.title || project.title;
     const description = projectT?.description || project.description;
 
@@ -29,8 +31,16 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     };
 }
 
-export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string; locale: Locale }> }) {
-    const { id, locale } = await params;
+type PortfolioItemCopy = {
+    title?: string;
+    description?: string;
+    challenge?: { title: string; content: string };
+    solution?: { title: string; content: string; points: string[] };
+};
+
+export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
+    const { id, locale: rawLocale } = await params;
+    const locale = toLocale(rawLocale);
     const dict = await getDictionary(locale);
     const project = portfolio.find((p) => p.id === id);
 
@@ -38,7 +48,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         notFound();
     }
 
-    const projectT = dict.portfolio.items[id as keyof typeof dict.portfolio.items];
+    // Not every project has challenge/solution copy, so widen to the optional shape
+    const projectT = dict.portfolio.items[id as keyof typeof dict.portfolio.items] as PortfolioItemCopy | undefined;
     const t = dict.portfolio.detail;
     const projectTitle = projectT?.title || project.title;
     const projectDescription = projectT?.description || project.description;

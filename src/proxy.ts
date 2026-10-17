@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { i18n } from './src/i18n/config';
+import { i18n } from '@/i18n/config';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
-    // Skip middleware for static files and API routes
+    // Skip proxy for static files and API routes
     if (
         pathname.startsWith('/_next') ||
         pathname.startsWith('/api') ||
@@ -15,22 +15,16 @@ export function middleware(request: NextRequest) {
         return;
     }
 
-    // Check if pathname is exactly a locale (e.g., /fr or /en)
-    const isExactLocale = i18n.locales.some(
-        (locale) => pathname === `/${locale}`
-    );
-
-    // Redirect /fr to /fr/ for consistency
-    if (isExactLocale) {
-        return NextResponse.redirect(
-            new URL(`${pathname}/`, request.url)
-        );
-    }
-
-    // Check if there is any supported locale in the pathname
+    // Check if there is any supported locale in the pathname (/fr or /fr/...)
     const pathnameIsMissingLocale = i18n.locales.every(
-        (locale) => !pathname.startsWith(`/${locale}/`)
+        (locale) => pathname !== `/${locale}` && !pathname.startsWith(`/${locale}/`)
     );
+
+    // The portal has no real authentication yet: keep it locked unless explicitly enabled
+    const portalMatch = pathname.match(/^\/([a-z]{2})\/portal(\/|$)/);
+    if (portalMatch && process.env.NEXT_PUBLIC_PORTAL_ENABLED !== 'true') {
+        return NextResponse.redirect(new URL(`/${portalMatch[1]}/login`, request.url));
+    }
 
     // Redirect if there is no locale
     if (pathnameIsMissingLocale) {
@@ -38,7 +32,7 @@ export function middleware(request: NextRequest) {
 
         // Handle root path and other paths
         const newPath = pathname === '/' 
-            ? `/${locale}/` 
+            ? `/${locale}` 
             : `/${locale}${pathname}`;
 
         return NextResponse.redirect(

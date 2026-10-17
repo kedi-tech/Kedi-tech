@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import { FileText, Download, MoreVertical, Upload, X, Loader2 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -30,11 +30,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { type Locale } from "@/i18n/config";
+import { useDictionary } from "@/components/providers/dictionary-provider";
 
 // Simple toast implementation using browser alert for demo
 const showToast = (title: string, description?: string) => {
     // In a real app, you'd use a proper toast library
-    console.log(`Toast: ${title}`, description);
     // For demo, we'll use alert
     alert(`${title}\n${description || ""}`);
 };
@@ -57,17 +57,11 @@ const initialFiles: FileItem[] = [
 export default function PortalFilesPage() {
     const params = useParams();
     const locale = (params.locale as Locale) || "fr";
-    const [dict, setDict] = useState<any>(null);
+    const dict = useDictionary();
     const [files, setFiles] = useState<FileItem[]>(initialFiles);
     const [isUploadDialogOpen, setIsUploadDialogOpen] = useState(false);
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [isUploading, setIsUploading] = useState(false);
-
-    useEffect(() => {
-        import(`@/i18n/dictionaries/${locale}.json`).then((module) => {
-            setDict(module.default);
-        });
-    }, [locale]);
 
     const formatFileSize = (bytes: number): string => {
         if (bytes === 0) return "0 Bytes";
@@ -134,8 +128,6 @@ export default function PortalFilesPage() {
                 : `Downloading ${file.name}...`
         );
     };
-
-    if (!dict) return <div>Loading...</div>;
     const t = dict.portal.files;
 
     return (
@@ -187,7 +179,7 @@ export default function PortalFilesPage() {
                                             <DropdownMenuContent align="end">
                                                 <DropdownMenuItem onClick={() => handleDownload(file)}>
                                                     <Download className="mr-2 h-4 w-4" />
-                                                    {t.download || dict.common.download}
+                                                    {dict.common.download}
                                                 </DropdownMenuItem>
                                                 <DropdownMenuItem 
                                                     className="text-destructive"

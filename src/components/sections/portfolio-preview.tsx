@@ -2,17 +2,17 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { type Locale } from "@/i18n/config";
+import { type Locale, type Dictionary } from "@/i18n/config";
 
 interface PortfolioPreviewProps {
     locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
 export function PortfolioPreview({ locale, dict }: PortfolioPreviewProps) {

@@ -1,4 +1,4 @@
-import { Code, Smartphone, Cloud, Database, Layout, Bot, Globe, Lock } from "lucide-react";
+import { Smartphone, Cloud, Database, Layout, Bot, Globe } from "lucide-react";
 
 export const services = [
     {

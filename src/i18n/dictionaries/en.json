@@ -323,7 +323,8 @@
             "signingIn": "Signing in...",
             "orContinue": "Or continue with",
             "noAccount": "Don't have an account?",
-            "signUp": "Sign up"
+            "signUp": "Sign up",
+            "portalComingSoon": "The client portal is coming soon. Contact us for updates on your project in the meantime."
         },
         "signup": {
             "title": "Create an Account",

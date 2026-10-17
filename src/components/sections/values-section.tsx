@@ -3,14 +3,13 @@
 import { Heart, Shield, Zap, Users } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { type Locale } from "@/i18n/config";
+import { type Dictionary } from "@/i18n/config";
 
 interface ValuesSectionProps {
-    locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
-export function ValuesSection({ locale, dict }: ValuesSectionProps) {
+export function ValuesSection({ dict }: ValuesSectionProps) {
     const t = dict.about.values;
     const values = [
         {

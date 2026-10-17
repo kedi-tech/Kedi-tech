@@ -4,10 +4,11 @@ import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { services } from "@/data/services";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { getDictionary, type Locale } from "@/i18n/config";
+import { getDictionary, toLocale } from "@/i18n/config";
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: Locale }> }) {
-    const { id, locale } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }) {
+    const { id, locale: rawLocale } = await params;
+    const locale = toLocale(rawLocale);
     const dict = await getDictionary(locale);
     const service = services.find((s) => s.id === id);
 
@@ -27,8 +28,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     };
 }
 
-export default async function ServiceDetailPage({ params }: { params: Promise<{ id: string; locale: Locale }> }) {
-    const { id, locale } = await params;
+export default async function ServiceDetailPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
+    const { id, locale: rawLocale } = await params;
+    const locale = toLocale(rawLocale);
     const dict = await getDictionary(locale);
     const service = services.find((s) => s.id === id);
 

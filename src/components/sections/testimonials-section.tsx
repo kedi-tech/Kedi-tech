@@ -4,14 +4,13 @@ import { Quote } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { type Locale } from "@/i18n/config";
+import { type Dictionary } from "@/i18n/config";
 
 interface TestimonialsSectionProps {
-    locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
-export function TestimonialsSection({ locale, dict }: TestimonialsSectionProps) {
+export function TestimonialsSection({ dict }: TestimonialsSectionProps) {
     const t = dict.testimonials;
     const testimonials = t.items || [];
     
@@ -26,7 +25,7 @@ export function TestimonialsSection({ locale, dict }: TestimonialsSectionProps) 
                 </AnimatedSection>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                    {testimonials.map((testimonial: any, index: number) => (
+                    {testimonials.map((testimonial, index) => (
                         <AnimatedSection key={testimonial.id} delay={index * 0.1}>
                             <Card className="h-full border-none shadow-lg bg-background relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-6 opacity-10">
@@ -44,7 +43,7 @@ export function TestimonialsSection({ locale, dict }: TestimonialsSectionProps) 
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-muted-foreground italic relative z-10">
-                                        "{testimonial.content}"
+                                        &ldquo;{testimonial.content}&rdquo;
                                     </p>
                                 </CardContent>
                             </Card>

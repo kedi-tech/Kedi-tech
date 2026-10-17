@@ -6,11 +6,11 @@ import { services } from "@/data/services";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { type Locale } from "@/i18n/config";
+import { type Locale, type Dictionary } from "@/i18n/config";
 
 interface ServicesPreviewProps {
     locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
 export function ServicesPreview({ locale, dict }: ServicesPreviewProps) {

@@ -23,18 +23,33 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: React.ReactNode }) {
     const [items, setItems] = useState<CartItem[]>([]);
 
-    // Load cart from local storage on mount
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    // Load cart from local storage on mount. This has to run in an effect (not a
+    // lazy initializer) so the server and first client render match.
     useEffect(() => {
-        const savedCart = localStorage.getItem("cart");
-        if (savedCart) {
-            setItems(JSON.parse(savedCart));
+        try {
+            const savedCart = localStorage.getItem("cart");
+            if (savedCart) {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
+                setItems(JSON.parse(savedCart));
+            }
+        } catch {
+            // Corrupt or blocked storage: start with an empty cart
         }
+        setIsLoaded(true);
     }, []);
 
-    // Save cart to local storage whenever it changes
+    // Save cart to local storage whenever it changes (after the initial load,
+    // so the empty initial state never overwrites a saved cart)
     useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify(items));
-    }, [items]);
+        if (!isLoaded) return;
+        try {
+            localStorage.setItem("cart", JSON.stringify(items));
+        } catch {
+            // Storage unavailable (private mode, quota): cart stays in memory
+        }
+    }, [items, isLoaded]);
 
     const addItem = (newItem: Omit<CartItem, "quantity">) => {
         setItems((prevItems) => {

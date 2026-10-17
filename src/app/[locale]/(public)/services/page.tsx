@@ -4,14 +4,14 @@ import { services } from "@/data/services";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { getDictionary, type Locale } from "@/i18n/config";
+import { getDictionary, toLocale } from "@/i18n/config";
 
 export default async function ServicesPage({
     params,
 }: {
-    params: Promise<{ locale: Locale }>;
+    params: Promise<{ locale: string }>;
 }) {
-    const { locale } = await params;
+    const locale = toLocale((await params).locale);
     const dict = await getDictionary(locale);
     const t = dict.services;
 

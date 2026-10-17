@@ -3,14 +3,14 @@ import { DashboardCharts } from "@/components/portal/dashboard-charts";
 import { DollarSign, FolderKanban, Clock, CheckCircle2 } from "lucide-react";
 import { projects } from "@/data/projects";
 import { invoices } from "@/data/invoices";
-import { getDictionary, type Locale } from "@/i18n/config";
+import { getDictionary, toLocale } from "@/i18n/config";
 
 export default async function PortalDashboard({
     params,
 }: {
-    params: Promise<{ locale: Locale }>;
+    params: Promise<{ locale: string }>;
 }) {
-    const { locale } = await params;
+    const locale = toLocale((await params).locale);
     const dict = await getDictionary(locale);
     const t = dict.portal.dashboard;
 

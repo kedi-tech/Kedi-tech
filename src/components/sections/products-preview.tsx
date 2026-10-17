@@ -8,11 +8,11 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { type Locale } from "@/i18n/config";
+import { type Locale, type Dictionary } from "@/i18n/config";
 
 interface ProductsPreviewProps {
     locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
 export function ProductsPreview({ locale, dict }: ProductsPreviewProps) {

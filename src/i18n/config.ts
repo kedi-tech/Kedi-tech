@@ -1,3 +1,5 @@
+import type en from './dictionaries/en.json';
+
 export const i18n = {
     defaultLocale: 'fr',
     locales: ['fr', 'en'],
@@ -5,20 +7,22 @@ export const i18n = {
 
 export type Locale = (typeof i18n)['locales'][number];
 
-const dictionaries: Record<Locale, () => Promise<any>> = {
+export type Dictionary = typeof en;
+
+const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
     fr: () => import('./dictionaries/fr.json').then((module) => module.default),
     en: () => import('./dictionaries/en.json').then((module) => module.default),
 };
 
-export const getDictionary = async (locale: Locale): Promise<any> => {
-    // Ensure locale is valid, fallback to default if not
-    const validLocale: Locale = (i18n.locales.includes(locale as Locale) ? locale : i18n.defaultLocale) as Locale;
-    
-    const dictionaryLoader = dictionaries[validLocale];
-    if (!dictionaryLoader || typeof dictionaryLoader !== 'function') {
-        // Fallback to default locale
-        return dictionaries[i18n.defaultLocale]();
-    }
-    
-    return dictionaryLoader();
+export function isLocale(value: string): value is Locale {
+    return (i18n.locales as readonly string[]).includes(value);
+}
+
+/** Narrows a route param to a supported locale, falling back to the default. */
+export function toLocale(value: string): Locale {
+    return isLocale(value) ? value : i18n.defaultLocale;
+}
+
+export const getDictionary = async (locale: string): Promise<Dictionary> => {
+    return dictionaries[toLocale(locale)]();
 };

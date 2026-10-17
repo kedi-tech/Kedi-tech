@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -26,18 +26,13 @@ import {
 } from "@/components/ui/select";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { type Locale } from "@/i18n/config";
+import { useDictionary } from "@/components/providers/dictionary-provider";
 
 export default function ContactPage() {
     const params = useParams();
     const locale = (params.locale as Locale) || "fr";
-    const [dict, setDict] = useState<any>(null);
+    const dict = useDictionary();
     const [isSubmitting, setIsSubmitting] = useState(false);
-
-    useEffect(() => {
-        import(`@/i18n/dictionaries/${locale}.json`).then((module) => {
-            setDict(module.default);
-        });
-    }, [locale]);
 
     // Create form schema - use default messages that work for both languages
     const formSchema = z.object({
@@ -62,12 +57,9 @@ export default function ContactPage() {
         },
     });
 
-    // Now we can check for dict and conditionally render
-    if (!dict) return <div>Loading...</div>;
-
     const t = dict.contact;
 
-    async function onSubmit(values: z.infer<typeof formSchema>) {
+    async function onSubmit(values: z.infer<typeof formSchema>, event?: React.BaseSyntheticEvent) {
         setIsSubmitting(true);
         
         try {
@@ -76,7 +68,10 @@ export default function ContactPage() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(values),
+                body: JSON.stringify({
+                    ...values,
+                    website: event ? new FormData(event.target as HTMLFormElement).get("website") : null,
+                }),
             });
 
             const data = await response.json();
@@ -115,6 +110,7 @@ export default function ContactPage() {
                         <div className="bg-card border rounded-xl p-8 shadow-lg">
                             <Form {...form}>
                                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                                    <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <FormField
                                             control={form.control}

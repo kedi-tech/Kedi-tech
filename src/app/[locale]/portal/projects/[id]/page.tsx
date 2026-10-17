@@ -6,14 +6,15 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, CheckCircle2, Circle, Clock } from "lucide-react";
-import { getDictionary, type Locale } from "@/i18n/config";
+import { getDictionary, toLocale } from "@/i18n/config";
 
 export default async function PortalProjectDetailPage({ 
     params 
 }: { 
-    params: Promise<{ id: string; locale: Locale }> 
+    params: Promise<{ id: string; locale: string }> 
 }) {
-    const { id, locale } = await params;
+    const { id, locale: rawLocale } = await params;
+    const locale = toLocale(rawLocale);
     const dict = await getDictionary(locale);
     const project = projects.find((p) => p.id === id);
 

@@ -14,11 +14,11 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { AppLogo } from "@/components/ui/app-logo";
-import { type Locale } from "@/i18n/config";
+import { type Locale, type Dictionary } from "@/i18n/config";
 
 interface PortalSidebarProps {
     locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
 export function PortalSidebar({ locale, dict }: PortalSidebarProps) {
@@ -61,7 +61,7 @@ export function PortalSidebar({ locale, dict }: PortalSidebarProps) {
 
             <div className="p-4 border-t">
                 <Button variant="ghost" className="w-full justify-start gap-3 text-destructive hover:text-destructive hover:bg-destructive/10" asChild>
-                    <Link href={`/${locale}/auth/login`}>
+                    <Link href={`/${locale}/login`}>
                         <LogOut className="w-5 h-5" />
                         {t.logout}
                     </Link>

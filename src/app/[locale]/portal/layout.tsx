@@ -1,15 +1,15 @@
 import { PortalSidebar } from "@/components/portal/sidebar";
 import { PortalTopbar } from "@/components/portal/topbar";
-import { getDictionary, type Locale } from "@/i18n/config";
+import { getDictionary, toLocale } from "@/i18n/config";
 
 export default async function PortalLayout({
     children,
     params,
 }: {
     children: React.ReactNode;
-    params: Promise<{ locale: Locale }>;
+    params: Promise<{ locale: string }>;
 }) {
-    const { locale } = await params;
+    const locale = toLocale((await params).locale);
     const dict = await getDictionary(locale);
 
     return (

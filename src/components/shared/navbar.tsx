@@ -10,11 +10,11 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { type Locale } from "@/i18n/config";
+import { type Locale, type Dictionary } from "@/i18n/config";
 
 interface NavbarProps {
     locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
 export function Navbar({ locale, dict }: NavbarProps) {

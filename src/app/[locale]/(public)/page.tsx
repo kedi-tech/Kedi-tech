@@ -4,14 +4,14 @@ import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 // import { ProductsPreview } from "@/components/sections/products-preview";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { CTASection } from "@/components/sections/cta-section";
-import { getDictionary, type Locale } from "@/i18n/config";
+import { getDictionary, toLocale } from "@/i18n/config";
 
 export default async function Home({
     params,
 }: {
-    params: Promise<{ locale: Locale }>;
+    params: Promise<{ locale: string }>;
 }) {
-    const { locale } = await params;
+    const locale = toLocale((await params).locale);
     const dict = await getDictionary(locale);
 
     return (
@@ -20,7 +20,7 @@ export default async function Home({
             <ServicesPreview locale={locale} dict={dict} />
             <PortfolioPreview locale={locale} dict={dict} />
             {/* <ProductsPreview locale={locale} dict={dict} /> */}
-            <TestimonialsSection locale={locale} dict={dict} />
+            <TestimonialsSection dict={dict} />
             <CTASection locale={locale} dict={dict} />
         </div>
     );

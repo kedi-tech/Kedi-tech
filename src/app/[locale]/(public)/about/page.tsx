@@ -2,14 +2,14 @@ import { TeamSection } from "@/components/sections/team-section";
 import { TimelineSection } from "@/components/sections/timeline-section";
 import { ValuesSection } from "@/components/sections/values-section";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { getDictionary, type Locale } from "@/i18n/config";
+import { getDictionary, toLocale } from "@/i18n/config";
 
 export default async function AboutPage({
     params,
 }: {
-    params: Promise<{ locale: Locale }>;
+    params: Promise<{ locale: string }>;
 }) {
-    const { locale } = await params;
+    const locale = toLocale((await params).locale);
     const dict = await getDictionary(locale);
     const t = dict.about;
 
@@ -27,9 +27,9 @@ export default async function AboutPage({
                 </div>
             </section>
 
-            <ValuesSection locale={locale} dict={dict} />
+            <ValuesSection dict={dict} />
             <TimelineSection locale={locale} dict={dict} />
-            <TeamSection locale={locale} dict={dict} />
+            <TeamSection dict={dict} />
         </div>
     );
 }

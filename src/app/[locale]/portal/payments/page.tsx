@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import { invoices } from "@/data/invoices";
+
+type Invoice = (typeof invoices)[number];
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -25,31 +27,25 @@ import { Download, Eye, FileText, Building2, Calendar, DollarSign } from "lucide
 // Simple toast implementation using browser alert for demo
 const showToast = (title: string, description?: string) => {
     // In a real app, you'd use a proper toast library
-    console.log(`Toast: ${title}`, description);
     // For demo, we'll use alert
     alert(`${title}\n${description || ""}`);
 };
 import { type Locale } from "@/i18n/config";
+import { useDictionary } from "@/components/providers/dictionary-provider";
 
 export default function PortalPaymentsPage() {
     const params = useParams();
     const locale = (params.locale as Locale) || "fr";
-    const [dict, setDict] = useState<any>(null);
-    const [previewInvoice, setPreviewInvoice] = useState<any>(null);
+    const dict = useDictionary();
+    const [previewInvoice, setPreviewInvoice] = useState<Invoice | null>(null);
     const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
-    useEffect(() => {
-        import(`@/i18n/dictionaries/${locale}.json`).then((module) => {
-            setDict(module.default);
-        });
-    }, [locale]);
-
-    const handlePreview = (invoice: any) => {
+    const handlePreview = (invoice: Invoice) => {
         setPreviewInvoice(invoice);
         setIsPreviewOpen(true);
     };
 
-    const handleDownload = (invoice: any) => {
+    const handleDownload = (invoice: Invoice) => {
         // Dummy download - just show a toast
         showToast(
             locale === "fr" ? "Téléchargement" : "Download",
@@ -58,8 +54,6 @@ export default function PortalPaymentsPage() {
                 : `Downloading invoice ${invoice.id}...`
         );
     };
-
-    if (!dict) return <div>Loading...</div>;
     const t = dict.portal.payments;
 
     return (

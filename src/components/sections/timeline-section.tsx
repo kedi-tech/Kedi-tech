@@ -1,11 +1,11 @@
 "use client";
 
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { type Locale } from "@/i18n/config";
+import { type Locale, type Dictionary } from "@/i18n/config";
 
 interface TimelineSectionProps {
     locale: Locale;
-    dict: any;
+    dict: Dictionary;
 }
 
 export function TimelineSection({ locale, dict }: TimelineSectionProps) {

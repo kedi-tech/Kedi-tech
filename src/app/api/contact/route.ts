@@ -1,44 +1,16 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
+import * as z from 'zod';
+import { forwardToWebhook } from '@/lib/webhook';
+
+const contactSchema = z.object({
+    name: z.string().trim().min(2).max(100),
+    email: z.email().max(200),
+    whatsapp: z.string().trim().min(10).max(30),
+    projectType: z.string().trim().min(1).max(100),
+    budget: z.string().trim().min(1).max(100),
+    message: z.string().trim().min(10).max(5000),
+});
 
 export async function POST(request: NextRequest) {
-    try {
-        const body = await request.json();
-        
-        // Get webhook URL from environment variable
-        const webhookUrl = "https://hook.eu2.make.com/ey8viruxar2b44duz9u4ssbahl481wbx";
-        
-
-
-        // Prepare the payload to send to webhook
-        const payload = {
-            ...body,
-            timestamp: new Date().toISOString(),
-            source: 'kedi-tech-website',
-        };
-
-        // Send to webhook
-        const response = await fetch(webhookUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(payload),
-        });
-
-        if (!response.ok) {
-            throw new Error(`Webhook request failed: ${response.statusText}`);
-        }
-
-        return NextResponse.json(
-            { success: true, message: 'Contact form submitted successfully' },
-            { status: 200 }
-        );
-    } catch (error) {
-        console.error('Error sending to webhook:', error);
-        return NextResponse.json(
-            { error: 'Failed to submit contact form' },
-            { status: 500 }
-        );
-    }
+    return forwardToWebhook(request, contactSchema, 'kedi-tech-website', 'Failed to submit contact form');
 }
-
